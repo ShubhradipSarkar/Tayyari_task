@@ -1,24 +1,13 @@
 import mongoose from "mongoose";
 mongoose.Promise = global.Promise;
-const QuestionSchema = new mongoose.Schema({
-    question:{
+const StudentSchema = new mongoose.Schema({
+    StudentName:{
         type: String,
     },
-    question_img: {
+    Student_img: {
         type: String,
     },
-    options: {
-        type: [String],
-    },
-    correctOption:{
-        type: String,
-    },
-    answer : {
-        type: String,
-    },
-    answer_img: {
-        type: String,
-    }
+    
 })
-const Question = mongoose.models.question || mongoose.model("question", QuestionSchema);
-export default Question;
+const Student = mongoose.models.Student || mongoose.model("Student", StudentSchema);
+export default Student;

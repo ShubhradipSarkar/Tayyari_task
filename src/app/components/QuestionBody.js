@@ -72,7 +72,7 @@ function QuestionBody({
 
   
 
-  const justifyAnswer=(option, answer, pageNumber)=>{
+  const justifyAnswer=async(option, answer, pageNumber)=>{
     setticked(true);
     setmark(pageNumber);
     setselectedOption(option);
@@ -83,6 +83,20 @@ function QuestionBody({
     else{
       console.log('incorrect answer')
     }
+    // The code needed to save the answer in database...........
+    //   try {
+    //     const upload = await axios.post("/api/users/SaveAnswer",{
+    //       StudentName: studentName,
+    //       Student_id: Student_id,
+    //       question_id: question_id,
+    //       selectedOption: selectedOption,
+    //     })
+        
+    // } catch (error) {
+        
+    //     console.log("could not add add history", error);
+    // }
+    //............................................................
   }
 
   
