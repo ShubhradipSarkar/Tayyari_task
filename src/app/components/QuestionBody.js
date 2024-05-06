@@ -1,10 +1,9 @@
+"use client"
 import React, { useRef, useEffect, useState } from 'react';
 import axios from 'axios';
 import { useRecoilValue } from 'recoil';
 import { showAnswerState, drawerState, pageState } from '../../recoilState';
 import Footer from './Footer';
-import ContentPasteIcon from '@mui/icons-material/ContentPaste';
-import Box from '@mui/material/Box';
 import MobileNavbar from './MobileNavbar';
 import Image from 'next/image'
 import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlined';
@@ -40,16 +39,7 @@ const buttonStyle = {
   boxShadow: '0px 2px 2px rgba(0, 0, 0, 7)'
 };
 
-const optionbuttonStyle = {
-  height: '50px',
-  backgroundColor: 'white',
-  color: 'black',
-  borderRadius: '10px',
-  minWidth: '250px',
-  width: '35%',
-  margin: '10px',
-  boxShadow: '0px 2px 2px rgba(0, 0, 0, 7)'
-};
+
 
 function Navbar() {
   return (
@@ -172,19 +162,7 @@ function QuestionBody({
         </div>
         <div style={{ position: 'absolute', top: 0, bottom: 0, right: 0, width: '20px', background: 'white', pointerEvents: 'none' }}></div>
       </div>
-      {showAnswer && (
-        <div style={questionContainerStyle}>
-          <div style={{ ...scrollableStyle, paddingRight: '10px' }} ref={answerRef}>
-            {questions.map((question, index) => (
-              <div key={question._id}>
-                <h1 style={{ color: 'black' }}>Answer {index + 1}</h1>
-                <button style={{ ...buttonStyle, boxShadow: '0px 2px 6px rgba(0, 0, 0, 7)' }}>{question.answer}</button>
-              </div>
-            ))}
-          </div>
-          <div style={{ position: 'absolute', top: 0, bottom: 0, right: 0, width: '20px', background: 'white', pointerEvents: 'none' }}></div>
-        </div>
-      )}
+      
     </div>
     </div>
   );

@@ -1,3 +1,4 @@
+"use client"
 import React, { useState, useEffect } from 'react';
 import { useRecoilState } from 'recoil';
 import { pageState } from '../../recoilState';
@@ -38,9 +39,9 @@ function MobileNavbar() {
         display: 'flex',
         justifyContent: 'space-between', 
         padding: '10px',
-        zIndex: 1000, // Ensure it's on top of other content
-        backgroundColor: 'white', // Optional: add background color
-        boxShadow: '0px 2px 6px rgba(0, 0, 0, 0.1)', // Optional: add shadow
+        zIndex: 1000, 
+        backgroundColor: 'white',
+        boxShadow: '0px 2px 6px rgba(0, 0, 0, 0.1)',
       }}
     >
       {isMobileScreen && (

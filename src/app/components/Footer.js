@@ -1,14 +1,13 @@
 // Footer.js
+"use client"
 import React, { useState, useEffect } from 'react';
 import { useRecoilState } from 'recoil';
-import { showAnswerState, drawerState, pageState } from '../../recoilState';
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import { pageState } from '../../recoilState';
 import Box from '@mui/material/Box';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import CloseIcon from '@mui/icons-material/Close';
 import Image from 'next/image'
-import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlined';
+
 
 const optionbuttonStyle = {
     height: '50px',
@@ -22,8 +21,7 @@ const optionbuttonStyle = {
   };
   
 function Footer({ ans, ansImg }) {
-  const [showAnswer, setShowAnswer] = useRecoilState(showAnswerState);
-  const [drawer, setDrawer] = useRecoilState(drawerState);
+  
   const [page, setPage] = useRecoilState(pageState);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
@@ -74,11 +72,7 @@ function Footer({ ans, ansImg }) {
       
     </Box>
   );
-  const handleShowAnswer = () => {
-    toggleDrawer('right', true);
-    setShowAnswer(!showAnswer);
-    setDrawer(!drawer);
-  };
+  
 
   return (
     <div
