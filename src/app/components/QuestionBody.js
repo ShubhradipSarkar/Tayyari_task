@@ -41,14 +41,6 @@ const buttonStyle = {
 
 
 
-function Navbar() {
-  return (
-    <div style={{color:'black', position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000}}>
-      {/* Your navbar content here */}
-      Navbar Component
-    </div>
-  );
-}
 
 function QuestionBody({
   searchParams,
@@ -63,13 +55,8 @@ function QuestionBody({
   const [mark, setmark] = useState(0);
   const questionRef = useRef(null);
   const answerRef = useRef(null);
-  const [state, setState] = useState({
-    top: false,
-    left: false,
-    bottom: false,
-    right: false,
-  });
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  
+  const [screenWidth, setScreenWidth] = useState();
 
   useEffect(() => {
     const handleResize = () => {
@@ -101,17 +88,7 @@ function QuestionBody({
     }
   }, [showAnswer, drawer]);
 
-  const toggleDrawer = (anchor, open) => (event) => {
-    if (
-      event &&
-      event.type === 'keydown' &&
-      (event.key === 'Tab' || event.key === 'Shift')
-    ) {
-      return;
-    }
-
-    setState({ ...state, [anchor]: open });
-  };
+  
 
   const justifyAnswer=(option, answer, pageNumber)=>{
     setticked(true);

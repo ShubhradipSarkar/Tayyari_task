@@ -23,14 +23,12 @@ const optionbuttonStyle = {
 function Footer({ ans, ansImg }) {
   
   const [page, setPage] = useRecoilState(pageState);
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [screenWidth, setScreenWidth] = useState(500);
 
   useEffect(() => {
-    const handleResize = () => {
+    
       setScreenWidth(window.innerWidth);
-    };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    
   }, []);
 
   const isMobileScreen = screenWidth < 700;
