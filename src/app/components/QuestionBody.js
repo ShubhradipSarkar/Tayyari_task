@@ -29,17 +29,6 @@ const scrollableStyle = {
   marginRight: '-20px'
 };
 
-const buttonStyle = {
-  height: '50px',
-  backgroundColor: 'white',
-  color: 'black',
-  borderRadius: '10px',
-  width: '450px',
-  margin: '10px',
-  boxShadow: '0px 2px 2px rgba(0, 0, 0, 7)'
-};
-
-
 
 
 function QuestionBody({
@@ -59,16 +48,9 @@ function QuestionBody({
   const [screenWidth, setScreenWidth] = useState();
 
   useEffect(() => {
-    const handleResize = () => {
-      setScreenWidth(window.innerWidth);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    // Clean up the event listener on component unmount
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+    
+    setScreenWidth(window.innerWidth);
+    
   }, []);
 
   useEffect(() => {
